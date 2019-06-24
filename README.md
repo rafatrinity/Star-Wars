@@ -3,7 +3,7 @@ Conexão com a API e exibição de dados
 Instruções gerais
 
 
-Desafio front
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 Olá,
 
