@@ -1,5 +1,5 @@
 <app-toolbar></app-toolbar>
-<div class="container-fluid">
+<div class="container-fluid pt-5 mt-5">
     <div class="row" *ngIf="dados != undefined">
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3" *ngFor="let planeta of dados.results">
             <app-card name={{planeta.name}} climate={{planeta.climate}} movies={{planeta.films.length}}

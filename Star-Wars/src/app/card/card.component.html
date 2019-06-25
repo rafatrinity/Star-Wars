@@ -11,7 +11,7 @@
         climate: {{climate}}
       </li>
       <li>
-        terrain: {{terrain}}
+        terrain: {{ (terrain.length>6)? (terrain | slice:0:14)+' ...' : (terrain) }}
       </li>
     </ul>
   </mat-card-content>
