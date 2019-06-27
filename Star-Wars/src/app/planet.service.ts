@@ -10,10 +10,10 @@ export class PlanetService {
   BaseUrl: string = environment.ApiUrl;
   constructor(private httpC: HttpClient) { }
   
-  getAllPlanets(): Observable<Planet[]>{
-		return this.httpC.get<Planet[]>(`${this.BaseUrl}`);
+  getAllPlanets(page): Observable<Planet[]>{
+		return this.httpC.get<Planet[]>(`${this.BaseUrl}`+`?page=`+page);
 	}
-
+  
   getPlanetById(id: string): Observable<Planet[]>{
 		return this.httpC.get<Planet[]>(`${this.BaseUrl}`+id);
   }

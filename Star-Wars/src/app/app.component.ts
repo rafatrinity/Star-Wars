@@ -7,20 +7,20 @@ import { PlanetService } from './planet.service'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  ngOnInit(): void {
-    this.getAllPlanets();
-  }
   title = 'Star-Wars';
-  dados: any[];
+  dados = []
+  ngOnInit(): void {
+    this.getAllPlanets(1);
+  }
   constructor(private PlanetService: PlanetService) {
 
   }
-  getAllPlanets(): void {
-    this.PlanetService.getAllPlanets().subscribe(
+  getAllPlanets(page): void {
+    this.PlanetService.getAllPlanets(page).subscribe(
       ok => {
-      this.dados = ok;
-      console.log(ok)
-    },
+        this.dados.push(ok);
+        console.log(ok)
+      },
       error => {
         console.error('deu merda: ' + error);
       }
