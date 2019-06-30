@@ -1,5 +1,14 @@
-<mat-toolbar class="navbar fixed-top"color="primary">
+<mat-toolbar class="navbar fixed-top">
   <mat-toolbar-row>
-      <img src='../../assets/starwars.svg' alt="Smiley face" height="76" width="76">
+    <img
+      src="../../assets/starwars.svg"
+      alt="Star Wars"
+      height="76"
+      width="76"
+    />
+    <app-autocomplete
+      [planets]="planetas"
+      class="ml-auto mt-2"
+    ></app-autocomplete>
   </mat-toolbar-row>
 </mat-toolbar>

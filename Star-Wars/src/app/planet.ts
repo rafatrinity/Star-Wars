@@ -14,3 +14,12 @@ export interface Planet {
     'terrain': string;
     'url': string;
 }
+
+export interface Data {
+    'count': string;
+    'next': string;
+    'previous': any;
+    'results': Planet[];
+}
+
+
