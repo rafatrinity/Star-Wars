@@ -1,5 +1,5 @@
-<app-toolbar [planetas] = "planetas" ></app-toolbar>
-<div *ngIf="planetas.length < 2; else elseBlock" backgroud-color="primary">
+<app-toolbar *ngIf="planetas?.length > 60" [planetas] = "planetas" ></app-toolbar>
+<div *ngIf="planetas.length < 10; else elseBlock" backgroud-color="primary">
   <app-spinner></app-spinner>
 </div>
 <ng-template #elseBlock>

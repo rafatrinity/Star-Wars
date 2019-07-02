@@ -17,11 +17,11 @@ export class AutocompleteComponent {
     this.filteredOptions = this.ctrl.valueChanges
       .pipe(
         startWith(''),
-        map(state => state ? this._filterStates(state) : this.planets.slice())
+        map(planet => planet ? this.filterPlanets(planet) : this.planets.slice())
       );
   }
 
-  private _filterStates(value: string): Planet[] {
+  private filterPlanets(value: string): Planet[] {
     const filterValue = value.toLowerCase();
     return this.planets.filter(planet => planet.name.toLowerCase().indexOf(filterValue) === 0);
   }

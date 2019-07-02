@@ -2,8 +2,8 @@
   <mat-form-field>
     <input
       type="text"
-      placeholder="Assignee"
-      aria-label="Assignee"
+      placeholder="Make your search"
+      aria-label="Planets"
       matInput
       FormControl="[(ctrl)]"
       [matAutocomplete]="auto"
@@ -11,7 +11,7 @@
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option
         *ngFor="let option of filteredOptions | async"
-        [value]="option"
+        [value]="option.name"
       >
         {{ option.name }}
       </mat-option>
