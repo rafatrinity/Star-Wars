@@ -10,12 +10,14 @@ import { Planet } from './planet';
 export class AppComponent implements OnInit {
   title = 'Star-Wars';
   dados = [];
+  img: string[];
   planetas: Planet[] = [];
 
   ngOnInit(): void {
     this.inicializar();
+    this.getImg('Utapau');
   }
-  constructor(private PlanetService: PlanetService) {}
+  constructor(private PS: PlanetService) { }
 
   inicializar() {
     for (let i = 1; i < 8; i++) {
@@ -23,20 +25,29 @@ export class AppComponent implements OnInit {
     }
   }
 
-  SetPlanet(dados){
-// tslint:disable-next-line: prefer-for-of
-    for (let i = 0; i < dados.length; i++) {
-      this.planetas.push(dados[i]);
+  SetPlanet(dados) {
+    for (const p of dados) {
+     // this.getImg(p.name);,
+     //console.log(p.name);
+      this.planetas.push(p);
     }
   }
+  getImg(name: string) {
+    this.PS.getImage(name).subscribe(ok => {
+      console.log(ok);
+    },
+      error => {
+        console.error('deu merda: ' + error);
+      });
+  }
+
 
   getAllPlanets(page): void {
-    this.PlanetService.getPlanetsPage(page)
+    this.PS.getPlanetsPage(page)
       .pipe(map(x => ({ results: x.results })))
       .subscribe(
         ok => {
           this.SetPlanet(ok.results);
-         // console.log(ok.results);
         },
         error => {
           console.error('deu merda: ' + error);

@@ -6,12 +6,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardModule } from './card/card.module';
 import { ToolbarModule } from './toolbar/toolbar.module';
 import { SpinnerModule } from './spinner/spinner.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    MatTableModule,
+    MatPaginatorModule,
     SpinnerModule,
     BrowserModule,
     BrowserAnimationsModule,

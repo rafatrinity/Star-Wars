@@ -9,6 +9,9 @@ import { skip, filter, map } from 'rxjs/operators';
 })
 export class PlanetService {
   BaseUrl: string = environment.ApiUrl;
+  GoogleKey: string = environment.GoogleKey;
+  cx: string = environment.cx;
+  Google: string = environment.GoogleUrl;
   constructor(private httpC: HttpClient) { }
 
   getPlanetsPage(page): Observable<Data> {
@@ -17,6 +20,10 @@ export class PlanetService {
 
   getPlanetById(id: string): Observable<Data[]> {
     return this.httpC.get<Data[]>(`${this.BaseUrl}` + id);
+  }
+
+  getImage(img: string): Observable<any[]>{
+    return this.httpC.get<any[]>(this.Google + img + this.cx + '&num=3&searchType=image&fields=items(link)' + this.GoogleKey)
   }
 
 }

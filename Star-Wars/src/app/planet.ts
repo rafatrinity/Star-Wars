@@ -13,6 +13,7 @@ export interface Planet {
     'surface_water': string;
     'terrain': string;
     'url': string;
+    'img': string[];
 }
 
 export interface Data {

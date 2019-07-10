@@ -17,8 +17,12 @@ export class AutocompleteComponent {
     this.filteredOptions = this.ctrl.valueChanges
       .pipe(
         startWith(''),
-        map(planet => planet ? this.filterPlanets(planet) : this.planets.slice())
-      );
+        map(value => typeof value === 'string' ? value : value.name),
+        map(name => name ? this.filterPlanets(name) : this.planets.slice()));
+  }
+
+  displayFn(planet?: Planet): string | undefined {
+    return planet ? planet.name : undefined;
   }
 
   private filterPlanets(value: string): Planet[] {
