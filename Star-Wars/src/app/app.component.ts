@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.inicializar();
-    this.getImg('Utapau');
   }
   constructor(private PS: PlanetService) { }
 
@@ -26,21 +25,19 @@ export class AppComponent implements OnInit {
   }
 
   SetPlanet(dados) {
+    // for (const i of dados) {
+    //   //  this.PS.getImage(i.name).subscribe(ok => {
+    //   //     i.img = ok;
+    //   //     this.dados.push(i);
+    //   //   },
+    //   //   error => {
+    //   //     console.error('deu merda: ' + error);
+    //   //   });
+    // }
     for (const p of dados) {
-     // this.getImg(p.name);,
-     //console.log(p.name);
       this.planetas.push(p);
     }
   }
-  getImg(name: string) {
-    this.PS.getImage(name).subscribe(ok => {
-      console.log(ok);
-    },
-      error => {
-        console.error('deu merda: ' + error);
-      });
-  }
-
 
   getAllPlanets(page): void {
     this.PS.getPlanetsPage(page)

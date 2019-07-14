@@ -1,10 +1,10 @@
-<app-toolbar *ngIf="planetas?.length > 60" [planetas] = "planetas" ></app-toolbar>
+<app-toolbar *ngIf="planetas?.length > 60" [planetas]="planetas"></app-toolbar>
 <div *ngIf="planetas.length < 10; else elseBlock" backgroud-color="primary">
   <app-spinner></app-spinner>
 </div>
 <ng-template #elseBlock>
   <div class="container-fluid pt-5 mt-5">
-    <div class="row" >
+    <div class="row">
       <div
         *ngFor="let planeta of planetas"
         class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3"
