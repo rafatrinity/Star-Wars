@@ -1,9 +1,7 @@
-import {Component, Inject} from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
+
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',
@@ -11,21 +9,21 @@ export interface DialogData {
 })
 
 export class PopupComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) { }
 
   openDialog() {
-    this.dialog.open(DialogDataExampleDialog, {
-      data: {
-        animal: 'panda'
-      }
+    const dialogRef = this.dialog.open(Content, {
+      width: '80%',
+      maxHeight: '70%'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
     });
   }
 }
 
 @Component({
-  selector: 'dialog-data-example-dialog',
   templateUrl: 'content.html',
 })
-export class DialogDataExampleDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-}
+export class Content { }
