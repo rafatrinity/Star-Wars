@@ -21,6 +21,10 @@ export class PlanetService {
     return this.httpC.get<Data[]>(`${this.BaseUrl}` + id);
   }
 
+  getByurl(url) {
+    return this.httpC.get(url);
+  }
+
   getImage(img: string): Observable<any[]> {
     return this.httpC.get<any[]>(this.Google + img + this.cx + '&num=3&searchType=image&fields=items(link)' + this.GoogleKey)
   }

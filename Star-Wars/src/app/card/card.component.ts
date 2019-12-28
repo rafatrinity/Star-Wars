@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Planet } from '../planet';
 
 @Component({
   selector: 'app-card',
@@ -11,5 +12,5 @@ export class CardComponent{
   @Input() movies: number;
   @Input() climate: string;
   @Input() terrain: string;
-  @Input() url: string;
+  @Input() planet: Planet;
 }

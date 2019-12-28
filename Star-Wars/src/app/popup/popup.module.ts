@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PopupComponent, Content } from './popup.component';
+import { PopupComponent } from './popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material';
+import { ContentComponent } from './content/content.component';
 @NgModule({
   declarations: [
     PopupComponent,
-    Content
+    ContentComponent
   ],
   imports: [
     MatButtonModule,
     CommonModule,
     MatDialogModule
   ],
-  entryComponents: [Content],
+  entryComponents: [ContentComponent],
   exports: [PopupComponent]
 })
 export class PopupModule { }

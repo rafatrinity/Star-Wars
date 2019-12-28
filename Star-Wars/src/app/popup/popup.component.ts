@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { PlanetService } from '../planet.service';
+import { ContentComponent } from './content/content.component';
+import { Planet } from '../planet';
 
 
 @Component({
@@ -9,10 +12,10 @@ import { MatDialog } from '@angular/material/dialog';
 })
 
 export class PopupComponent {
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public PS: PlanetService) { }
 
   @Input() url: string;
-
+  @Input() planet: Planet;
   palette = [
     {
       temperate: {
@@ -27,23 +30,17 @@ export class PopupComponent {
       }
     }
   ];
-
+ 
   openDialog() {
     // tslint:disable-next-line: no-use-before-declare
-    const dialogRef = this.dialog.open(Content, {
+    const dialogRef = this.dialog.open(ContentComponent, {
       width: '80%',
-      maxHeight: '70%'
+      maxHeight: '70%',
+      data: this.planet
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-      console.log(this.url);
     });
   }
 }
-
-@Component({
-  templateUrl: 'content.html',
-})
-// tslint:disable-next-line: component-class-suffix
-export class Content { }
