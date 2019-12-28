@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -10,6 +10,9 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export class PopupComponent {
   constructor(public dialog: MatDialog) { }
+
+  @Input() url: string;
+
   palette = [
     {
       temperate: {
@@ -34,6 +37,7 @@ export class PopupComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      console.log(this.url);
     });
   }
 }

@@ -11,5 +11,5 @@ export class CardComponent{
   @Input() movies: number;
   @Input() climate: string;
   @Input() terrain: string;
-
+  @Input() url: string;
 }
