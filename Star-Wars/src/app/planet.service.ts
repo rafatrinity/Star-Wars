@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 import { Data } from './planet';
-import { skip, filter, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +21,7 @@ export class PlanetService {
     return this.httpC.get<Data[]>(`${this.BaseUrl}` + id);
   }
 
-  getImage(img: string): Observable<any[]>{
+  getImage(img: string): Observable<any[]> {
     return this.httpC.get<any[]>(this.Google + img + this.cx + '&num=3&searchType=image&fields=items(link)' + this.GoogleKey)
   }
 

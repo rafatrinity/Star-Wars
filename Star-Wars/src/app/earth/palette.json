@@ -1,0 +1,14 @@
+[
+    {
+        "temperate": {
+            "ocean": "#1979ff",
+            "continent": "#26bd15"
+        }
+    },
+    {
+        "arid": {
+            "ocean": "#cc8d10",
+            "continent": "#acbd15"
+        }
+    }
+]
