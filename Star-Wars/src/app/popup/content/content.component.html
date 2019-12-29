@@ -1,7 +1,8 @@
 <h2 mat-dialog-title>{{ data.name }}</h2>
 <mat-dialog-content class="mat-typography">
   <div class="d-flex">
-  <app-earth class="ml-auto"></app-earth>
+    <p>{{data.climate}}</p>
+  <app-earth class="ml-auto" climate = {{data.climate}}></app-earth>
 </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
