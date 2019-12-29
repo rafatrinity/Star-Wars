@@ -10,12 +10,22 @@
         class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3"
       >
         <app-card
-          name="{{ planeta.name }}"
-          climate="{{ planeta.climate }}"
-          movies="{{ planeta.films.length }}"
-          terrain="{{ planeta.terrain }}"
-          planet="{{planeta.residents}}"
-        ></app-card>
+        climate="{{ planeta.climate }}"
+        created="{{ planeta.created }}"
+        diameter="{{ planeta.diameter }}"
+        edited="{{ planeta.edited }}"
+        films="{{ planeta.films }}"
+        gravity="{{ planeta.gravity }}"
+        name="{{ planeta.name }}"
+        orbital_period="{{ planeta.orbital_period }}"
+        population="{{ planeta.population }}"
+        residents="{{ planeta.residents }}"
+        rotation_period="{{ planeta.rotation_period }}"
+        surface_water="{{ planeta.surface_water }}"
+        terrain="{{ planeta.terrain }}"
+        url="{{ planeta.url }}"
+        img="{{ planeta.img }}"
+          ></app-card>
       </div>
     </div>
   </div>

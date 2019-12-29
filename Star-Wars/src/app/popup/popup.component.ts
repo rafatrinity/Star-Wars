@@ -13,30 +13,48 @@ import { Planet } from '../planet';
 
 export class PopupComponent {
   constructor(public dialog: MatDialog, public PS: PlanetService) { }
-
+  @Input() climate: string;
+  @Input() created: string;
+  @Input() diameter: string;
+  @Input() edited: string;
+  @Input() films: string[];
+  @Input() gravity: string;
+  @Input() name: string;
+  // tslint:disable-next-line: variable-name
+  @Input() orbital_period: string;
+  @Input() population: string;
+  @Input() residents: string[];
+  // tslint:disable-next-line: variable-name
+  @Input() rotation_period: string;
+  // tslint:disable-next-line: variable-name
+  @Input() surface_water: string;
+  @Input() terrain: string;
   @Input() url: string;
-  @Input() planet: Planet;
-  palette = [
-    {
-      temperate: {
-        ocean: '#1979ff',
-        continent: '#26bd15'
-      }
-    },
-    {
-      arid: {
-        ocean: '#cc8d10',
-        continent: '#acbd15'
-      }
-    }
-  ];
- 
+  @Input() img: string[];
+
+
   openDialog() {
     // tslint:disable-next-line: no-use-before-declare
     const dialogRef = this.dialog.open(ContentComponent, {
       width: '80%',
       maxHeight: '70%',
-      data: this.planet
+      data: {
+        climate: this.climate,
+        created: this.created,
+        diameter: this.diameter,
+        edited: this.edited,
+        films: this.films,
+        gravity: this.gravity,
+        name: this.name,
+        orbital_period: this.orbital_period,
+        population: this.population,
+        residents: this.residents,
+        rotation_period: this.rotation_period,
+        surface_water: this.surface_water,
+        terrain: this.terrain,
+        url: this.url,
+        img: this.img
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {

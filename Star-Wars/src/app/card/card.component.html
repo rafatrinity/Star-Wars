@@ -5,7 +5,7 @@
       >{{ name }} <i class="material-icons">public</i></mat-card-title
     >
     <mat-card-subtitle
-      >total movies {{ movies }}
+      >total movies {{ films.length }}
       <i class="material-icons">live_tv</i></mat-card-subtitle
     >
   </mat-card-header>
@@ -14,7 +14,6 @@
 
   <mat-card-content>
     <ul>
-      {{ planet | json }}
       <li>climate: {{ climate }}</li>
       <li>
         terrain:
@@ -23,6 +22,22 @@
     </ul>
   </mat-card-content>
   <mat-card-actions>
-   <app-popup planet="{{planet}}"></app-popup>
+    <app-popup
+      climate="{{ climate }}"
+      created="{{ created }}"
+      diameter="{{ diameter }}"
+      edited="{{ edited }}"
+      films="{{ films }}"
+      gravity="{{ gravity }}"
+      name="{{ name }}"
+      orbital_period="{{ orbital_period }}"
+      population="{{ population }}"
+      residents="{{ residents }}"
+      rotation_period="{{ rotation_period }}"
+      surface_water="{{ surface_water }}"
+      terrain="{{ terrain }}"
+      url="{{ url }}"
+      img="{{ img }}"
+    ></app-popup>
   </mat-card-actions>
 </mat-card>
