@@ -24,9 +24,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd Star-Wars
-    - run: npm i
-    - run: npm i -g @angular/cli
-    - run: ng s
-      env:
-        CI: true
+    - run: npm i -g @angular/cli && cd Star-Wars && npm i && ls && ng s
+      
