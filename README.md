@@ -1,4 +1,7 @@
 # Star-Wars
+
+### infelizmente a API Star Wars está fora do ar. 😟
+
 Conexão com a API e exibição de dados
 Instruções gerais
 
