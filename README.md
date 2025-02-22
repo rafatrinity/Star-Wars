@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/rafatrinity/Star-Wars) 
+
 # Star-Wars
 
 ### infelizmente a API Star Wars está fora do ar. 😟
